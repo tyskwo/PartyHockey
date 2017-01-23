@@ -10,7 +10,12 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
+
+
+// network handler - singleton
 var networkHandler: NetworkHandler!
+
+
 
 class GameViewController: UIViewController
 {
@@ -20,16 +25,17 @@ class GameViewController: UIViewController
         
         if let view = self.view as! SKView?
         {
-            // Load the SKScene from 'GameScene.sks'
+            // load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: "GameScene")
             {
-                // Set the scale mode to scale to fit the window
+                // set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 
+                // create network handler and start looking for server
                 networkHandler = NetworkHandler()
                 networkHandler.startBrowsing()
                 
-                // Present the scene
+                // present the scene
                 view.presentScene(scene)
             }
             
