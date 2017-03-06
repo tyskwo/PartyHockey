@@ -43,10 +43,10 @@ class NetworkHandler: NSObject, NetServiceDelegate, GCDAsyncSocketDelegate
     {
         //http://stackoverflow.com/questions/25297436/gcdasyncsocket-multiple-connections
         print("Socket accepted")
-        sockets.append(newSocket)
-        //socket = newSocket
-        //socket.delegate = self
-        //print(newSocket.connectedPort)
+        //sockets.append(newSocket)
+        socket = newSocket
+        socket.delegate = self
+        print(newSocket.connectedPort)
         
         let screen = (scene as! GameScene).currentScreen
         
